@@ -1,0 +1,100 @@
+{
+  "students": [
+    {
+      "name": "Bea Smith",
+      "codepen_profile": "https://codepen.io/Beasmith24",
+      "github_profile": "https://github.com/beasmith152",
+      "github_permalink": "https://beasmith152.github.io",
+      "favorite_emoji": "🐝",
+      "image": "https://placehold.co/600x400?text=Bea+Smith"
+    },
+    {
+      "name": "Justine Leinen",
+      "codepen_profile": "https://codepen.io/jleinen1",
+      "github_profile": "https://github.com/jleinen1",
+      "github_permalink": "https://jleinen1.github.io",
+      "favorite_emoji": "🌸",
+      "image": "https://placehold.co/600x400?text=Justine+Leinen"
+    },
+    {
+      "name": "Brittany Wallace",
+      "codepen_profile": "https://codepen.io/bwallace11",
+      "github_profile": "https://github.com/bwallace11",
+      "github_permalink": "https://bwallace11.github.io",
+      "favorite_emoji": "🎨",
+      "image": "https://placehold.co/600x400?text=Brittany+Wallace"
+    },
+    {
+      "name": "Isabella Valdez",
+      "codepen_profile": "https://codepen.io/ValdezIzzy",
+      "github_profile": "https://github.com/ValdezIzzy",
+      "github_permalink": "https://valdezizzy.github.io",
+      "favorite_emoji": "✨",
+      "image": "https://placehold.co/600x400?text=Isabella+Valdez"
+    },
+    {
+      "name": "Emily Herbert",
+      "codepen_profile": "https://codepen.io/emilyherb",
+      "github_profile": "https://github.com/emilyherb",
+      "github_permalink": "https://emilyherb.github.io",
+      "favorite_emoji": "🌿",
+      "image": "https://placehold.co/600x400?text=Emily+Herbert"
+    },
+    {
+      "name": "Landon Umland",
+      "codepen_profile": "https://codepen.io/lumland03",
+      "github_profile": "https://github.com/lumland03",
+      "github_permalink": "https://lumland03.github.io",
+      "favorite_emoji": "🦋",
+      "image": "https://placehold.co/600x400?text=Landon+Umland"
+    },
+    {
+      "name": "Donnie Thurman",
+      "codepen_profile": "https://codepen.io/donniethurman",
+      "github_profile": "https://github.com/donniethurman",
+      "github_permalink": "https://donniethurman.github.io",
+      "favorite_emoji": "🎯",
+      "image": "https://placehold.co/600x400?text=Donnie+Thurman"
+    },
+    {
+      "name": "Sydney Lincoln",
+      "codepen_profile": "https://codepen.io/Sydney-Lincoln",
+      "github_profile": "https://github.com/xoxobeau06",
+      "github_permalink": "https://xoxobeau06.github.io",
+      "favorite_emoji": "💎",
+      "image": "https://placehold.co/600x400?text=Sydney+Lincoln"
+    },
+    {
+      "name": "Ian Szymanski",
+      "codepen_profile": "https://codepen.io/I_Squiddy",
+      "github_profile": "https://github.com/IanSzymanski",
+      "github_permalink": "https://ianszymanski.github.io",
+      "favorite_emoji": "🦑",
+      "image": "https://placehold.co/600x400?text=Ian+Szymanski"
+    },
+    {
+      "name": "Michael Bushyeager",
+      "codepen_profile": "https://codepen.io/Michael-Bushyeager05",
+      "github_profile": "https://github.com/mbushyeager05",
+      "github_permalink": "https://mbushyeager05.github.io",
+      "favorite_emoji": "🌲",
+      "image": "https://placehold.co/600x400?text=Michael+Bushyeager"
+    },
+    {
+      "name": "Tayla Eliason",
+      "codepen_profile": "https://codepen.io/teliasont",
+      "github_profile": "https://github.com/teliasont",
+      "github_permalink": "https://teliasont.github.io",
+      "favorite_emoji": "🎭",
+      "image": "https://placehold.co/600x400?text=Tayla+Eliason"
+    },
+    {
+      "name": "Peyton Whiteley",
+      "codepen_profile": "https://codepen.io/pknox",
+      "github_profile": "https://github.com/p3ytonk",
+      "github_permalink": "https://p3ytonk.github.io",
+      "favorite_emoji": "🚀",
+      "image": "https://placehold.co/600x400?text=Peyton+Whiteley"
+    }
+  ]
+}
