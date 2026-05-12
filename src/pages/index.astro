@@ -1,6 +1,7 @@
 ---
 import data from "./data.json";
 import logoUrl from "../../design-logo.svg?url";
+import skyBackgroundUrl from "../../background-sky.png?url";
 
 const { students } = data;
 const getStudentSlug = (name) =>
@@ -10,7 +11,7 @@ const getStudentSlug = (name) =>
     .replace(/(^-|-$)/g, "");
 ---
 
-<html lang="en">
+<html lang="en" style={`--sky-background: url(${skyBackgroundUrl});`}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -24,12 +25,18 @@ const getStudentSlug = (name) =>
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+      html {
+        min-height: 100%;
+        background: #87bce2 var(--sky-background) center top / cover no-repeat fixed;
+      }
+
       body {
         --profile-row-gap: clamp(5.5rem, 9vw, 8rem);
         --profile-top-gap: clamp(7rem, 11vw, 10rem);
+        min-height: 100vh;
         font-family: "Oswald", sans-serif;
         font-size: 14px;
-        background: #fff;
+        background: transparent;
         color: #111;
         padding: clamp(5.4rem, 9.5vw, 7.6rem) 2rem 2rem;
         text-transform: uppercase;

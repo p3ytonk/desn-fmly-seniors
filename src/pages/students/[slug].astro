@@ -1,5 +1,6 @@
 ---
 import data from "../data.json";
+import skyBackgroundUrl from "../../../background-sky.png?url";
 
 export function getStaticPaths() {
   return data.students.map((student) => ({
@@ -16,7 +17,7 @@ export function getStaticPaths() {
 const { student } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" style={`--sky-background: url(${skyBackgroundUrl});`}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,11 +31,16 @@ const { student } = Astro.props;
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+      html {
+        min-height: 100%;
+        background: #87bce2 var(--sky-background) center top / cover no-repeat fixed;
+      }
+
       body {
         min-height: 100vh;
         font-family: "Oswald", sans-serif;
         font-size: 14px;
-        background: #fff;
+        background: transparent;
         color: #111;
         padding: 2rem;
         text-transform: uppercase;
