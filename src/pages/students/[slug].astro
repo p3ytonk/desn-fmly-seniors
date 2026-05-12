@@ -1,0 +1,135 @@
+---
+import data from "../data.json";
+
+export function getStaticPaths() {
+  return data.students.map((student) => ({
+    params: {
+      slug: student.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+    },
+    props: { student },
+  }));
+}
+
+const { student } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{student.name} | DESN Seniors</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        min-height: 100vh;
+        font-family: "Oswald", sans-serif;
+        font-size: 14px;
+        background: #fff;
+        color: #111;
+        padding: 2rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: #555;
+        font-size: 0.8rem;
+        line-height: 1;
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+      }
+
+      .back-link:hover {
+        color: #000;
+      }
+
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        text-align: center;
+      }
+
+      img {
+        width: clamp(10rem, 26vw, 18rem);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        background: #f0f0f0;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 7vw, 4rem);
+        font-weight: 600;
+        line-height: 0.95;
+      }
+
+      .emoji {
+        display: block;
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      p {
+        max-width: 34rem;
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+      }
+
+      .links a {
+        min-width: 7rem;
+        padding: 0.85rem 1rem;
+        border: 1px solid #111;
+        color: #111;
+        font-weight: 600;
+        text-decoration: none;
+        line-height: 1;
+      }
+
+      .links a:hover,
+      .links a:focus-visible {
+        background: #111;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="back-link" href="/">Back to seniors</a>
+
+    <main>
+      <img src={student.image} alt={student.name} />
+      <span class="emoji" aria-hidden="true">{student.favorite_emoji}</span>
+      <h1>{student.name}</h1>
+      <p>{student.bio}</p>
+
+      <div class="links" aria-label={`${student.name}'s links`}>
+        <a href={student.github_permalink} target="_blank" rel="noopener">Portfolio</a>
+        <a href={student.github_profile} target="_blank" rel="noopener">GitHub</a>
+        <a href={student.codepen_profile} target="_blank" rel="noopener">CodePen</a>
+      </div>
+    </main>
+  </body>
+</html>
