@@ -37,27 +37,34 @@ const { student } = Astro.props;
       }
 
       body {
+        --brand-red: #7C0902;
         min-height: 100vh;
         font-family: "Oswald", sans-serif;
         font-size: 14px;
         background: transparent;
-        color: #111;
+        color: var(--brand-red);
         padding: 2rem;
         text-transform: uppercase;
       }
 
       .back-link {
         display: inline-block;
-        margin-bottom: 2rem;
-        color: #555;
-        font-size: 0.8rem;
+        min-width: 7rem;
+        margin: 1rem 0 2rem 1rem;
+        padding: 0.85rem 1rem;
+        border: 1px solid var(--brand-red);
+        color: var(--brand-red);
+        font-weight: 600;
+        font-size: 1rem;
         line-height: 1;
         text-decoration: none;
-        border-bottom: 1px solid currentColor;
+        text-align: center;
       }
 
-      .back-link:hover {
-        color: #000;
+      .back-link:hover,
+      .back-link:focus-visible {
+        background: var(--brand-red);
+        color: #fff;
       }
 
       main {
@@ -87,7 +94,7 @@ const { student } = Astro.props;
 
       p {
         max-width: 34rem;
-        color: #444;
+        color: var(--brand-red);
         font-size: 1rem;
         line-height: 1.6;
         text-transform: none;
@@ -104,8 +111,8 @@ const { student } = Astro.props;
       .links a {
         min-width: 7rem;
         padding: 0.85rem 1rem;
-        border: 1px solid #111;
-        color: #111;
+        border: 1px solid var(--brand-red);
+        color: var(--brand-red);
         font-weight: 600;
         text-decoration: none;
         line-height: 1;
@@ -113,7 +120,7 @@ const { student } = Astro.props;
 
       .links a:hover,
       .links a:focus-visible {
-        background: #111;
+        background: var(--brand-red);
         color: #fff;
       }
     </style>

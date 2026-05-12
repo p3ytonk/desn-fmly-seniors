@@ -21,7 +21,7 @@ const getStudentSlug = (name) =>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>DESN Seniors</title>
+    <title>SENIORS 2026</title>
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,28 +31,38 @@ const getStudentSlug = (name) =>
       }
 
       body {
+        --brand-red: #7C0902;
+        --site-nav-height: clamp(5.4rem, 9.5vw, 7.6rem);
         --profile-row-gap: clamp(5.5rem, 9vw, 8rem);
         --profile-top-gap: clamp(7rem, 11vw, 10rem);
         min-height: 100vh;
         font-family: "Oswald", sans-serif;
         font-size: 14px;
         background: transparent;
-        color: #111;
-        padding: clamp(5.4rem, 9.5vw, 7.6rem) 2rem 2rem;
+        color: var(--brand-red);
+        padding: 0 2rem 2rem;
         text-transform: uppercase;
       }
 
+      .site-nav {
+        position: relative;
+        z-index: 10;
+        height: var(--site-nav-height);
+        margin-right: -2rem;
+        margin-left: -2rem;
+        background: transparent;
+      }
+
       .site-logo {
-        position: fixed;
+        position: relative;
         top: 1rem;
         left: 1rem;
-        z-index: 10;
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
-        color: #111;
+        color: var(--brand-red);
         font-weight: 600;
-        font-size: clamp(1rem, 2vw, 1.4rem);
+        font-size: clamp(1.1rem, 2.4vw, 1.8rem);
         line-height: 1;
       }
 
@@ -92,7 +102,7 @@ const getStudentSlug = (name) =>
       }
 
       .profile-button:focus-visible {
-        outline: 2px solid #111;
+        outline: 2px solid var(--brand-red);
         outline-offset: 0.35rem;
       }
 
@@ -115,10 +125,12 @@ const getStudentSlug = (name) =>
     </style>
   </head>
   <body>
-    <div class="site-logo" aria-label="DESN Seniors 26">
-      <img src={logoUrl} alt="" />
-      <span>Seniors &rsquo;26</span>
-    </div>
+    <nav class="site-nav" aria-label="Site">
+      <div class="site-logo" aria-label="SENIORS 2026">
+        <img src={logoUrl} alt="" />
+        <span>SENIORS 2026</span>
+      </div>
+    </nav>
 
     <div class="grid">
 
