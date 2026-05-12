@@ -25,6 +25,8 @@ const getStudentSlug = (name) =>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
+        --profile-row-gap: clamp(5.5rem, 9vw, 8rem);
+        --profile-top-gap: clamp(7rem, 11vw, 10rem);
         font-family: "Oswald", sans-serif;
         font-size: 14px;
         background: #fff;
@@ -38,33 +40,31 @@ const getStudentSlug = (name) =>
         top: 1rem;
         left: 1rem;
         z-index: 10;
-        display: block;
-        width: clamp(2.75rem, 6vw, 4.5rem);
-        line-height: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #111;
+        font-weight: 600;
+        font-size: clamp(1rem, 2vw, 1.4rem);
+        line-height: 1;
       }
 
       .site-logo img {
-        width: 100%;
+        width: clamp(4rem, 8vw, 6.5rem);
         height: auto;
         display: block;
-      }
-
-      h1 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 2rem;
-        letter-spacing: 0.05em;
       }
 
       .grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 2rem 1rem;
+        gap: var(--profile-row-gap) 1rem;
+        margin-top: var(--profile-top-gap);
       }
 
       .card {
         border: 0;
-        padding: 1.5rem 1rem;
+        padding: 0 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -108,11 +108,11 @@ const getStudentSlug = (name) =>
     </style>
   </head>
   <body>
-    <a class="site-logo" href="/" aria-label="DESN Seniors home">
+    <div class="site-logo" aria-label="DESN Seniors 26">
       <img src={logoUrl} alt="" />
-    </a>
+      <span>Seniors &rsquo;26</span>
+    </div>
 
-    <h1>Seniors &rsquo;26</h1>
     <div class="grid">
 
       {students.map((student) => (
