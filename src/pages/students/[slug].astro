@@ -1,5 +1,6 @@
 ---
 import data from "../data.json";
+import logoUrl from "../../../design-logo.svg?url";
 
 export function getStaticPaths() {
   return data.students.map((student) => ({
@@ -36,7 +37,24 @@ const { student } = Astro.props;
         font-size: 14px;
         background: #fff;
         color: #111;
-        padding: 2rem;
+        padding: clamp(5.4rem, 9.5vw, 7.6rem) 2rem 2rem;
+        text-transform: uppercase;
+      }
+
+      .site-logo {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+        display: block;
+        width: clamp(2.75rem, 6vw, 4.5rem);
+        line-height: 0;
+      }
+
+      .site-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
       .back-link {
@@ -63,7 +81,7 @@ const { student } = Astro.props;
         text-align: center;
       }
 
-      img {
+      .student-photo {
         width: clamp(10rem, 26vw, 18rem);
         aspect-ratio: 1;
         border-radius: 50%;
@@ -78,17 +96,12 @@ const { student } = Astro.props;
         line-height: 0.95;
       }
 
-      .emoji {
-        display: block;
-        font-size: 2rem;
-        line-height: 1;
-      }
-
       p {
         max-width: 34rem;
         color: #444;
         font-size: 1rem;
         line-height: 1.6;
+        text-transform: none;
       }
 
       .links {
@@ -117,11 +130,14 @@ const { student } = Astro.props;
     </style>
   </head>
   <body>
+    <a class="site-logo" href="/" aria-label="DESN Seniors home">
+      <img src={logoUrl} alt="" />
+    </a>
+
     <a class="back-link" href="/">Back to seniors</a>
 
     <main>
-      <img src={student.image} alt={student.name} />
-      <span class="emoji" aria-hidden="true">{student.favorite_emoji}</span>
+      <img class="student-photo" src={student.image} alt={student.name} />
       <h1>{student.name}</h1>
       <p>{student.bio}</p>
 

@@ -1,5 +1,7 @@
 ---
 import data from "./data.json";
+import logoUrl from "../../design-logo.svg?url";
+
 const { students } = data;
 const getStudentSlug = (name) =>
   name
@@ -27,7 +29,24 @@ const getStudentSlug = (name) =>
         font-size: 14px;
         background: #fff;
         color: #111;
-        padding: 2rem;
+        padding: clamp(5.4rem, 9.5vw, 7.6rem) 2rem 2rem;
+        text-transform: uppercase;
+      }
+
+      .site-logo {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+        display: block;
+        width: clamp(2.75rem, 6vw, 4.5rem);
+        line-height: 0;
+      }
+
+      .site-logo img {
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
       h1 {
@@ -35,7 +54,6 @@ const getStudentSlug = (name) =>
         font-weight: 600;
         margin-bottom: 2rem;
         letter-spacing: 0.05em;
-        text-transform: uppercase;
       }
 
       .grid {
@@ -83,15 +101,17 @@ const getStudentSlug = (name) =>
 
       .card-name {
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: clamp(1.1rem, 2.4vw, 1.8rem);
+        line-height: 1.05;
       }
 
-      .card-emoji {
-        font-size: 1.1rem;
-      }
     </style>
   </head>
   <body>
+    <a class="site-logo" href="/" aria-label="DESN Seniors home">
+      <img src={logoUrl} alt="" />
+    </a>
+
     <h1>Seniors &rsquo;26</h1>
     <div class="grid">
 
@@ -105,7 +125,7 @@ const getStudentSlug = (name) =>
             <img src={student.image} alt={student.name} loading="lazy" />
           </a>
           <div class="card-name">
-            <span class="card-emoji">{student.favorite_emoji }</span> {student.name}
+            {student.name}
           </div>
         </div>
       ))}
